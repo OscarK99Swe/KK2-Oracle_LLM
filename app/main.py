@@ -74,13 +74,11 @@ def ask_oracle(payload: AskRequest):
         
     try:
         prompt = create_ai_prompt(df, payload.question)
-        
         ai_raw_response = generate_ai_answer(prompt)
-        
         return AskResponse(answer=ai_raw_response)
         
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Ett fel uppstod vid generering av AI-svar: {str(e)}"
+            detail=f"DEBUG ERROR: {type(e).__name__} - {str(e)}"
         )
