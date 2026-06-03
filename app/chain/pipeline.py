@@ -8,7 +8,7 @@ def load_text_pipeline():
     generator = pipeline(
         "text-generation", 
         model="HuggingFaceTB/SmolLM2-1.3B-Instruct",
-        device_map="auto"
+        device="cpu"
     )
     return generator
 
@@ -23,6 +23,5 @@ def generate_ai_answer(prompt: str) -> str:
     )
     
     generated_text = outputs[0]["generated_text"]
-    
     answer = generated_text.replace(prompt, "").strip()
     return answer
