@@ -8,3 +8,10 @@ class UploadMetadataResponse(BaseModel):
 
 class StatsResponse(BaseModel):
     summary: Dict[str, Dict[str, float]]
+
+
+class AskRequest(BaseModel):
+    question: str
+
+class AskResponse(BaseModel):
+    answer: str
