@@ -5,8 +5,7 @@ import io
 from app.data import save_dataframe, get_dataframe
 from app.schemas import UploadMetadataResponse, StatsResponse, AskRequest, AskResponse
 
-from app.chain.steps import create_ai_prompt
-from app.chain.pipeline import generate_ai_answer
+from app.chain.pipeline import generate_ai_answer_via_chain
 
 app = FastAPI(title="KK2 - Oracle")
 
@@ -56,8 +55,8 @@ def get_stats():
     df = get_dataframe()
     if df is None:
         raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="No data available, please upload a CSV file first"
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="No statistics available. Please upload a valid CSV file first."
         )
     return StatsResponse(summary=df.describe().to_dict())
 
@@ -73,12 +72,14 @@ def ask_oracle(payload: AskRequest):
         )
         
     try:
-        prompt = create_ai_prompt(df, payload.question)
-        ai_raw_response = generate_ai_answer(prompt)
-        return AskResponse(answer=ai_raw_response)
+        stats_string = df.describe().to_string()
+        
+        chain_response = generate_ai_answer_via_chain(payload.question, stats_string)
+        
+        return chain_response
         
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"DEBUG ERROR: {type(e).__name__} - {str(e)}"
+            detail=f"Error generating AI response via chain: {str(e)}"
         )
