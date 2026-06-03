@@ -45,3 +45,20 @@ async def upload_file(file: UploadFile = File(...)):
             status_code=status.HTTP_400_BAD_REQUEST,
             detail=f"Couldn't read CSV-file: {str(e)}"
         )
+
+
+@app.get("/data/stats", response_model=StatsResponse)
+def get_stats():
+    df = get_dataframe()
+    
+    if df is None:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="No data available, please upload a CSV file first."
+        )
+    
+    stats_df = df.describe()
+    
+    stats_dict = stats_df.to_dict()
+    
+    return StatsResponse(summary=stats_dict)
