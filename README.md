@@ -17,4 +17,13 @@ In order to run the software, you'll need the following:
 #### ***Setup***
 
 1. Download or clone the repo into an easily accesible folder on your computer
+
 2. Open the commandterminal in your IDE *(for VSC, you can use the shortcut "LCTRL + Ö" if you're on a standard Nordic ISO layout keyboard, otherwise use "LCTRL + `")*
+
+3. Create your own virtual environment using the command: **uv venv** and hit enter. Wait for the terminal to show that you're in the venv.
+
+4. download and sync all dependencies by using **uv sync**. If you wish to run the tests, you might have to run **uv add pytest --dev**.
+
+5. It's time to start the server! Do so by running the command **uv run uvicorn app.main:app --reload**
+
+Congratulations! everything should be running smoothly now.
