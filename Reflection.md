@@ -41,3 +41,12 @@ If I were to keep it this as only a local LLM, I wouldn't have to worry about th
 Since the LLM I used, *SmolLM2-1.7B*, is a locally run LLM designed for small-scale projects, there are quite a few limitations. Some of these limitations are: Less complex logical reasoning and a stronger tendency to make up facts. If you've ever used ChatGPT, CoPilot, Gemini etc... you've likely noticed that they sometimes give incorrect information and once you point it out, they correct themselves. That tends to happen way more with both less complex LLMs and especially locally run LLMs. 
 
 Smaller LLMs might also have a harder time figuring out what the user wants from its prompts compared to the giant LLMs. 
+
+***"Give an example of AI Bias"***
+
+If you were to give upload a CSV file about statistics regarding carreers and income and ask the AI "*Who eanrs the most?*". The AI could interpret it as "which person earns the most" instead of which carreer earns the most. It might spew out an incorrect conclussion or assumption that all the highly regarded job position are only held by men. This is what's known as "hallucinated bias". 
+
+As I wrote up above, always fact check AI, even if it's one of the current industry leaing names. 
+
+***"How would you test that your chain is reliable?"***
+
