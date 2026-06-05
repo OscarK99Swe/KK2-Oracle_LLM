@@ -12,7 +12,7 @@ In order to run the software, you'll need the following:
 - Python 3.14.4 *(or newer depending on when you view this)* 
 - An internet connection *(it'll download the roughly 2gb SmolLM needed for the AI functiunality)*
 - Web browser *(optional, but it allows you to use the SwaggerUI frontend)*
-- Atleast 5gb of available space *(2-3gb is enough, but better safe than sorry so I'm putting this here so you can't sue me :D )*
+- Atleast 5gb of available space *(3-4gb is enough, but better safe than sorry so I'm putting this here so you can't sue me :D )*
 
 ## ***Setup***
 
