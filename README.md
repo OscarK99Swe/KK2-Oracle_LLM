@@ -54,7 +54,7 @@ Hit "*Try it out*" -> Select a local CSV-file from your device *(or the  provide
 Alternative method: if you prefer to use the terminal, you can use the terminal command:
 
  *curl -X POST http://127.0.0.1:8000/data/upload \
-  -F "file=@YOUR_FILE_&_FILE_PATH.csv"*
+  -F "file=@YOUR_FILE_PATH_&_FILE.csv"*
 
 
   #### ***Viewing statistics of your CSV-file***
@@ -72,4 +72,18 @@ Alternative method: if you prefer to use the terminal, you can use the terminal 
 
    #### ***Asking the AI About your file***
 
-   
+Now for the fun part! 
+
+Same steps as before, select "Ask Oracle" from the four horizontal bars, hit "*Try it out*" -> replace the word "***String***" within the request body with your question/AI prompt and hit execute. 
+
+This step might take a while since this is when and where the SmolLM will start downloading to your system. Once it's downloaded, the prompt itself might take a minute or two depending on your CPU and its performance.
+
+Alternative method: 
+
+*curl -X POST http://127.0.0.1:8000/ai/ask \
+  -H "Content-Type: application/json" \
+  -d '{"question": "YOUR_PROMPT"}'*
+
+  ### ***Congratulations!***
+
+  You've now succesfully gone through the entire program! Thank you for trying it out! :)
