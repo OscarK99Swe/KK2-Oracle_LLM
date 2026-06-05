@@ -50,3 +50,5 @@ As I wrote up above, always fact check AI, even if it's one of the current indus
 
 ***"How would you test that your chain is reliable?"***
 
+Since LLMs are non-deterministic (they can respond differently every time), it is extremely difficult to test them with traditional unit tests. In my project, I solved this in **test_chain.py** by using **unittest.mock.patch**. By mocking **LLMRunner**, I was able to inject a fake response from the model. This allowed me to verify that the entire chain (from **PromptBuilder** to **ResponseParser**) always handles the data correctly, without the test crashing because the AI ​​formulated itself differently that particular day.
+
