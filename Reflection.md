@@ -57,3 +57,6 @@ Since LLMs are non-deterministic (they can respond differently every time), it i
 
 ***"Why is the Runnable pattern with the |-operator powerful?"***
 
+Using your own Runnable chain with the **|** operator (***prompt_builder | llm_runner | response_parser***) instead of a single giant function is incredibly powerful because of ***"Separation of Concerns"***. If everything was in one function, the code would have become hard to read and extremely difficult to test. With the pattern, each step now has a single responsibility. Thanks to Pydantic, **ResponseParser** knows exactly what data structure it gets from **LLMRunner**. If I want to replace SmolLM in the future replace with an API or another LLM, I simply need to rewrite the **LLMRunner** class, the rest of the chain remains completely untouched.
+
+So all in all, it compartmantilizes alot of the steps while also providing modularity for the future. 
