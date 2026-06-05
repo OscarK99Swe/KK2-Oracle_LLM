@@ -46,7 +46,7 @@ class LLMRunner(Runnable[LLMRunnerInput, ResponseParserInput]):
 
 class ResponseParser(Runnable[ResponseParserInput, AskResponse]):
     def invoke(self, input_data: ResponseParserInput) -> AskResponse:
-        final_answer = input_data.raw_output if input_data.raw_output else "The oracle returned an empty string... rip."
+        final_answer = input_data.raw_output if input_data.raw_output else "The Oracle is speechless! (Model returned an empty string, sorry brochaco)"
         return AskResponse(
             question=input_data.question,
             answer=final_answer,
