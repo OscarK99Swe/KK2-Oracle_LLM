@@ -26,4 +26,9 @@ In order to run the software, you'll need the following:
 
 5. It's time to start the server! Do so by running the command **uv run uvicorn app.main:app --reload**
 
-Congratulations! everything should be running smoothly now.
+Congratulations! everything should be running smoothly now. 
+If by chance something isn't working, make sure that you've completed all the steps. 
+If you have and it still isn't working... good luck I guess lol
+
+
+#### ***How to use the software***
