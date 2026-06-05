@@ -63,4 +63,8 @@ So all in all, it compartmantilizes alot of the steps while also providing modul
 
 ***"What was the biggest technical hurdle and how did you solve it?"*** 
 
-One of the many issues I had was to actually get the AI working properly, but I simply looked it up and I 
+One of the many issues I had was to actually get the AI working properly, the AI model returned empty strings becuase it didn't understand the context before the prompt was restructured. 
+
+I solved this in **ResponseParser** by implementing a specific edge-case handler that catches empty responses and instead returns a custom fallback response to prevent SwaggerUI from crashing on null values.
+
+It took my way longer to figure out than I'm willing to admit but hey! That's part of learning, right? .-.
