@@ -31,7 +31,7 @@ If by chance something isn't working, make sure that you've completed all the st
 If you have and it still isn't working... good luck I guess lol
 
 
-### ***How to use the software***
+## ***How to use the software***
 
 #### ***Starting***
 
@@ -84,6 +84,6 @@ Alternative method:
   -H "Content-Type: application/json" \
   -d '{"question": "YOUR_PROMPT"}'*
 
-  ### ***Congratulations!***
+  ## ***Congratulations!***
 
   You've now succesfully gone through the entire program! Thank you for trying it out! :)
