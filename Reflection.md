@@ -38,3 +38,6 @@ If I were to keep it this as only a local LLM, I wouldn't have to worry about th
 
 ***"What limitations does a small-scaled LLM have compared to larger LLMs? How does this affect the quality of the answers?"***
 
+Since the LLM I used, *SmolLM2-1.7B*, is a locally run LLM designed for small-scale projects, there are quite a few limitations. Some of these limitations are: Less complex logical reasoning and a stronger tendency to make up facts. If you've ever used ChatGPT, CoPilot, Gemini etc... you've likely noticed that they sometimes give incorrect information and once you point it out, they correct themselves. That tends to happen way more with both less complex LLMs and especially locally run LLMs. 
+
+Smaller LLMs might also have a harder time figuring out what the user wants from its prompts compared to the giant LLMs. 
